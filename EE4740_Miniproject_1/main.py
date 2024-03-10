@@ -32,7 +32,7 @@ plt.figure()
 for l, type in enumerate(distribution):
     for k, gender in enumerate(distribution[type]):
         # Plot a horizontal line
-        plt.subplot(3, 2, l+3*k+1)
+        plt.subplot(3, 2, l+2*k+1)
         
         plt.axhline(y=entropy[type][gender], color='r', linestyle='--', label='Entropy')
         plt.axhline(y=16, color='b', linestyle='--', label='Original Bits per Symbol')
@@ -66,7 +66,7 @@ if not skip_plot_distributions:
         for k,gender in enumerate(distribution[type]):
             # Bar plot of orig distribution
             print(f'Plotting {type}. {gender} distribution')
-            sub = plt.subplot(3, 2, l+3*k+1)
+            sub = plt.subplot(3, 2, l+2*k+1)
             
             plt.bar([key for key in distribution[type][gender].keys() if -10000 <= key <= 10000], [value for key, value in distribution[type][gender].items() if -10000 <= key <= 10000])
             plt.ylabel('Probability')
