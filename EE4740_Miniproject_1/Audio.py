@@ -89,7 +89,7 @@ class Audio:
         sorted_values = unique_values[sorted_indices]
         sorted_counts = counts[sorted_indices]
         
-        distribution = dict(zip(sorted_values, sorted_counts/len(data)))
+        distribution = dict(zip(sorted_values, (sorted_counts.astype(np.float64)/len(data))))
         return distribution
     
     def getEntopy(self, distribution):
